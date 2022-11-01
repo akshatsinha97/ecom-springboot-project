@@ -1,9 +1,7 @@
 package com.sheryians.major.model;
 
-import com.sun.javafx.beans.IDProperty;
 import lombok.Data;
 
-import javax.annotation.Generated;
 import javax.persistence.*;
 
 @Entity
@@ -16,7 +14,7 @@ public class Product {
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumns(name = "category_id", referencedColumnName = "category_id")
+    @JoinColumn(name = "category_id", referencedColumnName = "category_id")
     private Category category;
 
     private double price;
